@@ -1,0 +1,133 @@
+#sidebar-right {
+    width: 20%;
+    height: 721px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.sidebar-right {
+    width: 312px;
+    /* width: 100%; */
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+.sb-avata,
+.name-user {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    align-items: center;
+}
+
+.name-user .full-name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    /* identical to box height, or 89% */
+    color: #1C1D20;
+    margin-bottom: 25px;
+}
+
+.sb-btn {
+    border-radius: 10px;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sb-btn span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.sb-btn .icon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-see-profile {
+    background: #FF8787;
+}
+
+.btn-share-file {
+    background: #629E00;
+}
+
+.btn-share-link {
+    background: #386AF2;
+}
+
+.btn-add-like {
+    background: #FE3232;
+}
+
+.btn-del-chat {
+    background: #45B3B3;
+}
+
+.btn-share-link,
+.btn-share-file {
+    justify-content: space-between;
+}
+
+.title-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.title-sidebar button {
+    border-radius: 999em;
+    padding: 10px 10px;
+    background: #386AF2;
+    border: none;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-sidebar span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #1C1D20;
+}
+
+.dom-data-click {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+.list-image {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    overflow: auto;
+    height: 91%;
+}
+
+.item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+}
+
+.item-image img {
+    height: 100%;
+    width: 100%;
+}

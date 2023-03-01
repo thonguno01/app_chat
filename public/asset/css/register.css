@@ -1,0 +1,16 @@
+.wrap-content {
+    background: none;
+    flex-direction: column;
+    margin: 25px 0px;
+    width: 100%;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+}
+
+.bg-image img {
+    border-radius: 15px;
+}

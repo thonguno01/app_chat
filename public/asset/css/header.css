@@ -1,0 +1,77 @@
+.wrap-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+
+/* 
+.header-right {} */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.head-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.header-left .avatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-left .full-name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.header-left:hover .menu {
+    display: block;
+}
+
+.header-left .menu {
+    position: absolute;
+    right: 0;
+    display: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 180px;
+    z-index: 10;
+    top: 40px;
+}
+
+ul {
+    padding: 0;
+}
+
+.header-left .menu li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.header-left .btn-login {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-left .btn-login .register,
+.header-left .btn-login .login {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
