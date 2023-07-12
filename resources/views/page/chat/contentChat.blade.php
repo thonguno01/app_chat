@@ -1,5 +1,6 @@
 @push('css')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('asset/css/ppCreateGroup.css') }}" />
 @endpush
 @push('js')
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -48,7 +49,8 @@ $sender_id = session()->get('id');
                                         <div class="message-image">
                                             @foreach ($messageImg as $img)
                                                 <div class="item-message-img">
-                                                    <img src="{{ asset('upload/mesage/image/' . $img) }}"   onclick="showImageMessaeg('{{  $img }}',{{ $receider_id }})">
+                                                    <img src="{{ asset('upload/mesage/image/' . $img) }}"
+                                                        onclick="showImageMessaeg('{{ $img }}',{{ $receider_id }})">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -79,7 +81,8 @@ $sender_id = session()->get('id');
                                         <div class="message-image">
                                             @foreach ($messageImg as $img)
                                                 <div class="item-message-img">
-                                                    <img src="{{ asset('upload/mesage/image/' . $img) }}"   onclick="showImageMessaeg('{{  $img }}',{{ $receider_id }})">
+                                                    <img src="{{ asset('upload/mesage/image/' . $img) }}"
+                                                        onclick="showImageMessaeg('{{ $img }}',{{ $receider_id }})">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -142,14 +145,21 @@ $sender_id = session()->get('id');
     </div>
 </div>
 
-<div class="popup-slick d-none "  >
+<div class="popup-slick d-none ">
 
     <div class="slick-img">
         <div class="close-pp-img">
             <span onclick="closePpImage()"><i class="fa-solid fa-x text-dark"></i></span>
         </div>
         <div class="d-flex list-image-slick  image-main">
-            
+
         </div>
     </div>
 </div>
+
+
+@section('popup')
+    <div class="popup-group-member" hidden>
+
+    </div>
+@endsection

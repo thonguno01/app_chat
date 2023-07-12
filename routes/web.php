@@ -16,9 +16,6 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::get('/', function () {
-//     echo 1;
-// });
 Route::get('/', 'HomeController@index');
 Route::get('/login', 'User\LoginController@index')->name('login');
 Route::post('/login', 'User\LoginController@login')->name('login.post');
@@ -40,3 +37,5 @@ Route::post('/search-user', 'Chat\SearchController@searchUser')->name('search.li
 
 //Ajax
 Route::post('/get-image-message', 'AjaxController@getImageMessage');
+Route::post('/get-all-user', 'AjaxController@getAllUser');
+Route::post('/add-member-to-group', 'AjaxController@addMemberToGroup');

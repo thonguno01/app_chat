@@ -1,3 +1,7 @@
+<?php
+$infor = ChatHelper::getInforUser(session()->get('id'));
+
+?>
 <head>
     <div class="container">
         <div class="wrap-header ">
@@ -9,7 +13,7 @@
                 </div>
             </div>
             <div class="header-left">
-                @if (session()->get('isLogin') == false)
+                @if (session()->get('id') == false)
                     <div class="btn-login ">
                         <div class="login btn mr-2 bg-secondary">
                             <a href="/login" class="text-light">Đăng nhập </a>
@@ -23,7 +27,7 @@
                         <img src="{{ asset('asset/images/avata.png') }}" alt="avata" class="avatar">
                     </div>
                     <div class="header-info">
-                        <span class="full-name">{{ session()->get('name') }}</span>
+                        <span class="full-name">{{ $infor->name }}</span>
                         <nav class="menu">
                             <ul>
                                 <li>

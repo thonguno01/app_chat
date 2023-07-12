@@ -44,7 +44,7 @@
         </div>
 
     </div>
-
+    @yield('popup')
     {{-- @include('includes.footer') --}}
 
     <script src="{{ asset('asset/js/function.js') }}"></script>

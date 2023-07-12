@@ -9,7 +9,7 @@ html {
     padding-top: 16px;
     background: #2758DD;
     /* position: fixed; */
-    height: 880px;
+    height: 794px;
     bottom: 9px;
 }
 
@@ -99,6 +99,7 @@ html {
     line-height: 16px;
     text-align: center;
     color: #666666;
+    cursor: pointer;
 }
 
 .menu-active span {

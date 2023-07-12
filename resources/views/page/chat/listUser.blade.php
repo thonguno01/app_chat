@@ -1,6 +1,6 @@
 <?php
 $listUsers = ChatHelper::callUser();
-
+$group = ChatHelper::callGroup();
 ?>
 <div class="user-chat">
     <div class="information">
@@ -28,11 +28,12 @@ $listUsers = ChatHelper::callUser();
         <div class="user-like text-menu">
             <span>Yêu thích</span>
         </div>
-        <div class="not-seen text-menu">
-            <span> Chưa đọc</span>
-        </div>
+
         <div class="save-user text-menu">
             <span>Lưu trữu</span>
+        </div>
+        <div class="create-group text-menu">
+            <span onclick="addMember()">Tạo nhóm</span>
         </div>
     </div>
     <div class="list-user">
@@ -42,6 +43,7 @@ $listUsers = ChatHelper::callUser();
             $lastMessageContent = count($lastMessage) == 0 ? '' : $lastMessage[count($lastMessage) - 1]->message;
             $lastMessageImage = count($lastMessage) == 0 ? '' : $lastMessage[count($lastMessage) - 1]->message_img;
             $lastMessageStatus = count($lastMessage) == 0 ? '' : $lastMessage[count($lastMessage) - 1]->seen_status;
+            
             ?>
             <div class="item-user mb-2">
                 <div class="user-avata">
@@ -52,21 +54,24 @@ $listUsers = ChatHelper::callUser();
                 <div class="user-name">
                     <a href="/chat/{{ $user->id }}" class="name">{{ $user->name }} </a>
                     <div class="message-user  dom-message-socket-{{ $user->id }}">
+                        <?php
+                            if(count($lastMessage ) != 0){
+                            ?>
                         @if ($lastMessageContent != '' && $lastMessageImage == null)
-                      
                             <span
                                 class="message <?= $lastMessageStatus == 0 ? 'text-dark' : 'text-muted' ?>">{{ $lastMessageContent }}
                             </span>
-                        @elseif  ($lastMessageContent === '' && $lastMessageImage !== null)
-                             <span class="message <?= $lastMessageStatus == 0 ? 'text-dark' : 'text-dmuted' ?>">Đã nhận
-                                đươc ảnh 
+                        @elseif ($lastMessageContent === '' && $lastMessageImage !== null)
+                            <span class="message <?= $lastMessageStatus == 0 ? 'text-dark' : 'text-dmuted' ?>">Đã nhận
+                                đươc ảnh
                             </span>
                         @elseif ($lastMessageContent !== '' && $lastMessageImage !== null)
-                          <span
+                            <span
                                 class="message <?= $lastMessageStatus == 0 ? 'text-dark' : 'text-dmuted' ?>">{{ $lastMessageContent }}
                             </span>
                         @endif
                         {{-- <span class="time-chat">20 phút</span> --}}
+                        <?php }?>
                     </div>
                 </div>
                 <button type="button" class="icon-option"><img src="{{ asset('asset/images/icon-option.svg') }}"

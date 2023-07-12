@@ -29,9 +29,9 @@ class Messages extends Model
             ->join('users as u', 'u_mes.receider_id', '=', 'u.id')
             ->join('messages as mes', 'mes.id', '=', 'u_mes.message_id')
             ->select('mes.message', 'mes.message_img', 'u_mes.*',)
-            ->where(['u_mes.receider_id' => $id_user, 'u_mes.sender_id' => session()->get('id')])
+            ->where(['u_mes.receider_id' => $id_user, 'u_mes.sender_id' => session()->get('id') , 'u_mes.type' => 0])
             ->orWhere(function ($query) {
-                $query->where(['u_mes.sender_id' => session()->get('idUserGetMessage'), 'u_mes.receider_id' => session()->get('id')]);
+                $query->where(['u_mes.sender_id' => session()->get('idUserGetMessage'), 'u_mes.receider_id' => session()->get('id'), 'u_mes.type' => 0]);
             })
             ->orderBy('u_mes.created_at', 'ASC')
             ->get()->toArray();

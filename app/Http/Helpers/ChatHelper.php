@@ -3,6 +3,7 @@
 namespace App\Http\Helpers;
 
 use App\Models\GeneralModel;
+use App\Models\GroupModel;
 use App\Models\Messages;
 use Illuminate\Support\Facades\DB;
 
@@ -25,10 +26,13 @@ class ChatHelper
     static public  function getLastMessage($id_receider)
     {
         $message = Messages::getAllMessageOfOneUser($id_receider);
-
-        // echo "<pre>";
-        // var_dump($message);
-        // die;
         return $message;
+    }
+    static public function callGroup()
+    {
+        $idMe = session()->get('id');
+        $group =  GroupModel::memberGroup(4);
+        // var_dump($group);
+        // echo $idMe;
     }
 }
